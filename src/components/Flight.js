@@ -21,15 +21,34 @@ function Flight({flight}) {
 
         <span>{flight.numberOfLegs}</span>
 
-
-
         <span>{flight.averagePrice}$</span>
 
         <input type='checkbox' checked={showConnectionDetails}
         onChange={(e)=> setShowConnectionDetails(e.currentTarget.checked)}></input>
 
     </div>
+
+    <div className='flightsListReturn'>
+       <span>return:</span>
+      <span>{flight.sourceReturn}</span>
+
+      <span>{flight.destinationReturn}</span>
+
+      <span>{flight.flightDateReturn}</span>
+
+      <span>{flight.flightTimeReturn}</span>
+
+      <span>{flight.numberOfLegsReturn}</span>
+      <span></span>
+      <span></span>
+      {/* <span>{flight.averagePriceReturn}$</span> */}
+    </div>
+
       {showConnectionDetails ? <span className='flightsConnectionList'>{flight.flightConnection}</span> : "" }
+      <div>
+        {showConnectionDetails ? <span className='flightsConnectionListReturn'>{flight.flightConnectionReturn}</span> : "" }
+      </div>
+
     </div>
   )
 }

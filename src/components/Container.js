@@ -29,14 +29,14 @@ function Container({onSearch}) {
 
          onSearch({flightFrom,flightTo,depart,dateOfReturn,oneWay,price,legs,airlineName})
 
-        setFlightFrom('')
-        setFlightTo('')
-        setDepart('')
-        setDateOfReturn('')
-        setPrice('')
-        setLegs('')
-        setAirlineName('')
-        setOneWay(oneWay)
+        // setFlightFrom('')
+        // setFlightTo('')
+        // setDepart('')
+        // setDateOfReturn('')
+        // setPrice('')
+        // setLegs('')
+        // setAirlineName('')
+        // setOneWay(oneWay)
     }
 
   return (

@@ -27,9 +27,79 @@ function App() {
     let responseJSON = await response.json()
     // if(responseJSON.length==1)
     //   alert('please choose ')
+    if(flight.oneWay==true){
     let flightArray = buildFlightArray(responseJSON, flight)  //create flight array from response file relevant data
-    setFlights(flightArray)                                   // set array into flights useState      
+    setFlights(flightArray)}                                  // set array into flights useState      
+  
+    if(flight.oneWay==false){
+      let flightArray = buildFlightArrayRT(responseJSON, flight)
+      setFlights(flightArray)} 
+  
+  
   }
+
+  const buildFlightArrayRT = (responseJSON, flight) => {                 //////////////////////////////////////////////////////
+      let flightArray = []
+      console.log(responseJSON)
+  
+      const flightTimeRegExp = /\d\d:\d\d:\d\d/
+      const flightDateRegExp = /\d\d\/\d\d\/\d\d\d\d/
+  
+      
+          
+      
+      for(let i = 1; i < responseJSON.length; i++){
+  
+        let connectionString=""
+        let connectionStringReturn=""
+        for(let j=1;j<responseJSON[i].Segments[0].Legs.length; j++){
+          var An = responseJSON[i].Segments[0].Legs[j].DeparturePoint.AirportCode
+          var Dt = responseJSON[i].Segments[0].Legs[j].DeparturePoint.DateTime
+          connectionString+='Airport Name:' + An + '___________Day and Time:'+Dt+'________'
+          var AnReturn = responseJSON[i].Segments[1].Legs[0].DeparturePoint.AirportCode
+          var DtReturn = responseJSON[i].Segments[1].Legs[0].DeparturePoint.DateTime
+          connectionStringReturn+='Airport Name:' + AnReturn + '___________Day and Time:'+DtReturn+'________'
+        }
+  
+        let key = responseJSON[i].Segments[0].Key
+        let keyReturn = responseJSON[i].Segments[1].Key
+
+        let flightObj = {
+          airlineName: responseJSON[i].Segments[0].Legs[0].AirlineName,
+          // airlineNameReturn: responseJSON[i].Segments[1].Legs[1].AirlineName,
+
+          numberOfLegs: responseJSON[i].Segments[0].Legs.length-1,
+          numberOfLegsReturn: responseJSON[i].Segments[1].Legs.length-1,
+
+          averagePrice: responseJSON[i].AveragePrice,
+          averagePriceReturn: responseJSON[i].AveragePrice,
+
+          source: flight.flightFrom,
+          sourceReturn: flight.flightTo,
+
+          destination: flight.flightTo,
+          destinationReturn: flight.flightFrom,
+
+          flightTime: key.match(flightTimeRegExp)[0],
+          flightTimeReturn: keyReturn.match(flightTimeRegExp)[0],
+
+          flightDate: key.match(flightDateRegExp)[0],
+          flightDateReturn: keyReturn.match(flightDateRegExp)[0],
+
+          id: i,
+          flightConnection: connectionString,
+          flightConnectionReturn: connectionStringReturn
+
+  
+        }
+        // console.log(connectionString)
+  
+        flightArray[i - 1] = flightObj
+      }
+  
+      return flightArray
+    }                                                                      ///////////////////////////////////////////////
+
 
   
 
@@ -47,7 +117,7 @@ function App() {
 
       let connectionString=""
       for(let j=1;j<responseJSON[i].Segments[0].Legs.length; j++){
-        var An = responseJSON[i].Segments[0].Legs[j].DeparturePoint.AirportCode //(responseJSON[i].Segments[0].Legs[i].DepaturePoint)
+        var An = responseJSON[i].Segments[0].Legs[j].DeparturePoint.AirportCode
         var Dt = responseJSON[i].Segments[0].Legs[j].DeparturePoint.DateTime
         connectionString+='Airport Name:' + An + '___________Day and Time:'+Dt+'________'
       }
@@ -65,7 +135,7 @@ function App() {
         flightConnection: connectionString
 
       }
-      console.log(connectionString)
+      // console.log(connectionString)
 
       flightArray[i - 1] = flightObj
     }
@@ -75,7 +145,7 @@ function App() {
 
 
 
-  const handleMinPriceChange = event => {
+  const handleMinPriceChange = event => {                 // filter min max price handler
     const result = event.target.value.replace(/\D/g, '');
 
     setMinPrice(result);
@@ -87,10 +157,8 @@ function App() {
     setMaxPrice(result);
   };
 
-  // const handleDirectClick = event => {
-  //   console.log(event.target.value)
-  //   setDirectFilter(!directFilter)
-  // }
+ 
+
 
 
   return (

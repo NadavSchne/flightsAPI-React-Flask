@@ -19,7 +19,7 @@ function detailsDescription() {
 
         <span>{'Price:'}</span>
 
-        <span>{"Show Connection Details:"}</span>
+        <span>{"Show Connections:"}</span>
     </div>
   )
 }
