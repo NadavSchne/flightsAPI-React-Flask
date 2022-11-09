@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 function Flight({flight}) {
   const [showConnectionDetails, setShowConnectionDetails] = useState(false)
-
+  
   return (
     <div className='topOfFlightList'>
 
@@ -27,9 +27,10 @@ function Flight({flight}) {
         onChange={(e)=> setShowConnectionDetails(e.currentTarget.checked)}></input>
 
     </div>
-
+    {flight.oneWay ? "" :
     <div className='flightsListReturn'>
-       <span>return:</span>
+      <span>{flight.returnText}</span>
+
       <span>{flight.sourceReturn}</span>
 
       <span>{flight.destinationReturn}</span>
@@ -40,14 +41,16 @@ function Flight({flight}) {
 
       <span>{flight.numberOfLegsReturn}</span>
       <span></span>
-      <span></span>
+      <span></span> 
       {/* <span>{flight.averagePriceReturn}$</span> */}
-    </div>
+    </div> }
 
       {showConnectionDetails ? <span className='flightsConnectionList'>{flight.flightConnection}</span> : "" }
+      {flight.oneWay ? "" :
       <div>
         {showConnectionDetails ? <span className='flightsConnectionListReturn'>{flight.flightConnectionReturn}</span> : "" }
       </div>
+      }
 
     </div>
   )

@@ -88,7 +88,9 @@ function App() {
 
           id: i,
           flightConnection: connectionString,
-          flightConnectionReturn: connectionStringReturn
+          flightConnectionReturn: connectionStringReturn,
+
+          returnText: 'return:'
 
   
         }

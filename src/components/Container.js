@@ -12,7 +12,7 @@ function Container({onSearch}) {
     const [price,setPrice] = useState('')
     const [legs,setLegs] = useState('')
     const [airlineName,setAirlineName] = useState('')
-
+    const [returnText,setReturnText] = useState('return:')
 
     console.log(depart)
 
@@ -27,7 +27,7 @@ function Container({onSearch}) {
             return
         }
 
-         onSearch({flightFrom,flightTo,depart,dateOfReturn,oneWay,price,legs,airlineName})
+         onSearch({flightFrom,flightTo,depart,dateOfReturn,oneWay,price,legs,airlineName,returnText})
 
         // setFlightFrom('')
         // setFlightTo('')
