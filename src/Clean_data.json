@@ -1,0 +1,45 @@
+[{
+        "ID": "9fd77536-1563-480c-b6d8-f73b147fb02e",
+        "Segments": [{
+                "Legs": [{
+                        "DeparturePoint": {
+                            "AirportName": "Ben Gurion International Airport",
+                            "AirportCode": "TLV",
+                            "City": "תל אביב",
+                            "DateTime": "2022-05-25T04:45:00"
+                        },
+                        "ArrivalPoint": {
+                            "AirportName": "Schiphol International Airport",
+                            "AirportCode": "AMS",
+                            "City": "אמסטרדם",
+                            "DateTime": "2022-05-25T08:45:00"
+                        },
+                        "FlightNumber": "8424",
+                        "AirlineName": "Air France",
+                        "AirlineCode": "AF"
+                    }, {
+                        "DeparturePoint": {
+                            "AirportName": "Schiphol International Airport",
+                            "AirportCode": "AMS",
+                            "City": "אמסטרדם",
+                            "DateTime": "2022-05-25T17:05:00"
+                        },
+                        "ArrivalPoint": {
+                            "AirportName": "John F. Kennedy International Airport",
+                            "AirportCode": "JFK",
+                            "City": "ניו יורק",
+                            "DateTime": "2022-05-25T19:10:00"
+                        },
+                        "FlightNumber": "6699",
+                        "AirlineName": "Air France",
+                        "AirlineCode": "AF"
+                    }
+                ],
+                "SegmentDuration": 1285.0,
+                "ValidatingCarrier": "AF",
+            }
+        ],
+        "AveragePrice": 1981.0,
+        "CurrencySymbol": "$",
+    }
+]

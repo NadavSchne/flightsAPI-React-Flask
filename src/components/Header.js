@@ -6,7 +6,7 @@ function Header({title,title2}) {
 
         <div className='header'>
         <h1 className='title'>{title}</h1>
-        <img  src={logo} alt="" className='img' />
+        
         </div>
         <h2 className='title2'>{title2}</h2>
 

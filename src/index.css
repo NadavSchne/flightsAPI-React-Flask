@@ -15,26 +15,31 @@ code {
 
 
 .mainDiv{
-  height: 500px;
+  /* height: 500px; */
+  min-height: 480px;
   /* background-color: aqua; */
   background-image: url('https://www.maddyness.com/uk/app/uploads/2020/01/ross-parmly-rf6ywHVkrlY-unsplash.jpg');
 }
 
 .img{
-  height: 30px;
+  position: absolute;
+  right: 50%;
+  left: 40%;
+  height: 25px;
   width: 150px;
-  margin: 5px;
-
+  margin-top: 30px;
 }
 
 .header{
+
   display: flex;
   justify-content: space-between;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-left: 10px;
-  background-color: white;
+  background-color: rgba(252, 248, 229, 0.989);
+
 
 }
 .title{
@@ -49,6 +54,7 @@ code {
 
 .container{
   /* background-color: white; */
+
   height: 100px;
   display: flex;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -65,13 +71,16 @@ code {
 }
 
 .filters{
-  margin-left: 50px;
-  padding-left: 20px;
-  
+  display: flex;
+  font-size: 17px;
+  margin-top: 1px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  color:rgb(211, 215, 213);
 }
 
 .filterResults{
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .labelCheckBox1{
@@ -79,7 +88,8 @@ code {
 }
 
 .checkBox1{
-transform: scale(0.7);
+transform: scale(0.65);
+margin-bottom: 10px;
 }
 
 .labelPriceRange{
@@ -87,7 +97,7 @@ transform: scale(0.7);
 }
 
 .inputMin{
-  height: 15px;
+  height: 13px;
   width: 50px;
   font-size: 10px;
 
@@ -98,25 +108,54 @@ transform: scale(0.7);
 }
 
 .inputMax{
-  height: 15px;
+  height: 13px;
   width: 50px;
-font-size: 10px;
+  font-size: 10px;
 }
 
+.detailsDescription{
+  display: flex;
+  font-size: 10px;
+  margin-top: 30px;
+  margin-left: 110px;
+  margin-right: 40px;
+  color:rgb(223, 244, 174);
+  /* background-color: rgb(0, 4, 126); */
+  /* width:fit-content; */
+  justify-content: space-around;
 
-
-
+}
 
 .flightsList{
-  margin: 30px;
-  color:rgb(211, 215, 213);
   background-color: rgb(0, 4, 126);
-  width:fit-content;
+
+  display: flex;
+  font-size: 17px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  color:rgb(211, 215, 213);
+  /* background-color: rgb(0, 4, 126); */
+  /* width:fit-content; */
+  justify-content: space-around;
   
 }
 
+.flightsWrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.flightsConnectionList{
+  font-size: 13px;
+margin-left: 40px;
+  color:rgb(0, 0, 0);
+  background-color: rgba(140, 206, 232, 0.866);
+  width:fit-content;
+}
+/* 
 .borderTo{
-border-color: rgba(1, 5, 116, 0.709);}
+border-color: rgba(1, 5, 116, 0.709);} */
 
 .containerForm{
 

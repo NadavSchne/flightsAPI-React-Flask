@@ -1,31 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Flight({flight,}) {
+
+function Flight({flight}) {
+  const [showConnectionDetails, setShowConnectionDetails] = useState(false)
+
   return (
-    <div className='flightsList'>
-        <label>{'from    -'}</label>
-        <span>{flight.flightFrom}</span>
+    <div className='topOfFlightList'>
 
-        <label>{'-   to  -'}  </label>
-        <span>{flight.flightTo}</span>
+    <div className='flightsList'>               
 
-        <label className='borderTo'>{'-    Depart Date    -'}</label>
-        <span>{flight.depart}</span>
+        <span>{flight.airlineName}</span>
 
-        <label>{'-    Time    '}  </label>
-        <span>{flight.time}</span>
+        <span>{flight.source}</span>
 
-        <label>{''}</label>
-        <span>{flight.dateOfReturn}</span>
+        <span>{flight.destination}</span>
 
-        <label>{'-    price    -'}  </label>
-        <span>{flight.price}</span>
+        <span>{flight.flightDate}</span>
 
-        <label></label>
-        <input type="checkbox" value="show connections"></input>
+        <span>{flight.flightTime}</span>
 
+        <span>{flight.numberOfLegs}</span>
+
+
+
+        <span>{flight.averagePrice}$</span>
+
+        <input type='checkbox' checked={showConnectionDetails}
+        onChange={(e)=> setShowConnectionDetails(e.currentTarget.checked)}></input>
+
+    </div>
+      {showConnectionDetails ? <span className='flightsConnectionList'>{flight.flightConnection}</span> : "" }
     </div>
   )
 }
 
 export default Flight
+
+
+//className='borderTo' was deleted from         <label>{'-    Depart Date    -'}</label>    <span>{flight.depart}</span>                       
+        

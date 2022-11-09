@@ -8,8 +8,11 @@ function Container({onSearch}) {
     const [flightTo, setFlightTo] = useState('')
     const [depart, setDepart] = useState('')
     const [dateOfReturn, setDateOfReturn] = useState('')
-    const [oneWay, setOneWay] = useState(false)
+    const [oneWay, setOneWay] = useState(true)
     const [price,setPrice] = useState('')
+    const [legs,setLegs] = useState('')
+    const [airlineName,setAirlineName] = useState('')
+
 
     console.log(depart)
 
@@ -17,20 +20,23 @@ function Container({onSearch}) {
 
     const onSubmit= (e) => {
         e.preventDefault()
+        console.log("in onSubmit")
 
-        if(!flightFrom ||!flightTo || !depart){
+        if(!flightFrom ||!flightTo ||!depart){
             alert('Please fill the flight\'s details.')
             return
         }
 
-         onSearch({flightFrom,flightTo,depart,dateOfReturn,oneWay,price})
+         onSearch({flightFrom,flightTo,depart,dateOfReturn,oneWay,price,legs,airlineName})
 
         setFlightFrom('')
         setFlightTo('')
         setDepart('')
         setDateOfReturn('')
         setPrice('')
-        setOneWay(false)
+        setLegs('')
+        setAirlineName('')
+        setOneWay(oneWay)
     }
 
   return (

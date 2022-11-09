@@ -19,7 +19,7 @@ function Filters() {
 
 
   return (
-    <div className='filters'>
+    <div className='filtersOLD'>
         <label className='filterResults'>Filter Results:</label>
 
         <label className='labelCheckBox1'>Direct Flights</label>
