@@ -52,12 +52,15 @@ function App() {
   
         let connectionString=""
         let connectionStringReturn=""
+        
         for(let j=1;j<responseJSON[i].Segments[0].Legs.length; j++){
           var An = responseJSON[i].Segments[0].Legs[j].DeparturePoint.AirportCode
           var Dt = responseJSON[i].Segments[0].Legs[j].DeparturePoint.DateTime
           connectionString+='Airport Name:' + An + '___________Day and Time:'+Dt+'________'
-          var AnReturn = responseJSON[i].Segments[1].Legs[0].DeparturePoint.AirportCode
-          var DtReturn = responseJSON[i].Segments[1].Legs[0].DeparturePoint.DateTime
+        }
+        for(let j=1;j<responseJSON[i].Segments[1].Legs.length; j++){
+          var AnReturn = responseJSON[i].Segments[1].Legs[j].DeparturePoint.AirportCode
+          var DtReturn = responseJSON[i].Segments[1].Legs[j].DeparturePoint.DateTime
           connectionStringReturn+='Airport Name:' + AnReturn + '___________Day and Time:'+DtReturn+'________'
         }
   
